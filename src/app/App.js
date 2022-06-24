@@ -6,6 +6,7 @@ import TicTacToe from "./components/tic-tac-toe/tic-tac-toe";
 import Users from "./components/json-placeholder/users/users";
 import Posts from "./components/json-placeholder/posts/posts";
 import Comments from "./components/json-placeholder/comments/comments";
+import Todo from "./components/todo/todo";
 
 function App() {
 
@@ -17,6 +18,10 @@ function App() {
         {
             path: 'tic-tac-toe',
             name: 'Tic-tac-toe'
+        },
+        {
+          path: 'todo',
+          name: 'Todo'
         },
     ];
 
@@ -44,9 +49,7 @@ function App() {
                     <Route
                         index
                         element={<Navigate to='json-placeholder'/>}/>
-                    <Route
-                        path='json-placeholder'
-                        element={<Layout links={jsonPlaceholderHeaderLinks}/>}>
+                    <Route path='json-placeholder' element={<Layout links={jsonPlaceholderHeaderLinks}/>}>
                         <Route
                             index
                             element={<Navigate to='users'/>}/>
@@ -60,9 +63,8 @@ function App() {
                             path='comments'
                             element={<Comments/>}/>
                     </Route>
-                    <Route
-                        path='tic-tac-toe'
-                        element={<TicTacToe/>}/>
+                    <Route path='tic-tac-toe' element={<TicTacToe/>}/>
+                    <Route path='todo' element={<Todo/>}/>
                 </Route>
             </Routes>
         </div>

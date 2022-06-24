@@ -1,0 +1,41 @@
+.add-form {
+  margin-bottom: 1rem;
+  height: 2rem;
+  display: flex;
+
+  .add-input {
+    width: 80%;
+    text-align: center;
+    font-size: 19px;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+  }
+
+  .add-btn {
+    width: 20%;
+    height: 100%;
+    margin-left: 1rem;
+    border: none;
+    background-color: #cccccc;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .animation {
+    animation-name: submit;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes submit {
+    0% {
+      opacity: 1
+    }
+    50% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+  }
+}

@@ -6,50 +6,20 @@ import TicTacToe from "./components/tic-tac-toe/tic-tac-toe";
 import Users from "./components/json-placeholder/users/users";
 import Posts from "./components/json-placeholder/posts/posts";
 import Comments from "./components/json-placeholder/comments/comments";
-import Todo from "./components/todo/todo";
+import TodoApp from "./components/todo/Todo-app";
+import {JSONPLACEHOLDER_HEADER_LINKS, MAIN_HEADER_LINKS} from "./shared/constants/links/links";
 
 function App() {
-
-    const mainHeaderLinks = [
-        {
-            path: 'json-placeholder',
-            name: 'JSON placeholder'
-        },
-        {
-            path: 'tic-tac-toe',
-            name: 'Tic-tac-toe'
-        },
-        {
-          path: 'todo',
-          name: 'Todo'
-        },
-    ];
-
-    const jsonPlaceholderHeaderLinks = [
-        {
-            path: 'users',
-            name: 'Users'
-        },
-        {
-            path: 'posts',
-            name: 'Posts'
-        },
-        {
-            path: 'comments',
-            name: 'Comments'
-        },
-    ];
-
-    return (
+        return (
         <div>
             <Routes>
                 <Route
                     path=''
-                    element={<Layout links={mainHeaderLinks}/>}>
+                    element={<Layout links={MAIN_HEADER_LINKS}/>}>
                     <Route
                         index
                         element={<Navigate to='json-placeholder'/>}/>
-                    <Route path='json-placeholder' element={<Layout links={jsonPlaceholderHeaderLinks}/>}>
+                    <Route path='json-placeholder' element={<Layout links={JSONPLACEHOLDER_HEADER_LINKS}/>}>
                         <Route
                             index
                             element={<Navigate to='users'/>}/>
@@ -64,7 +34,7 @@ function App() {
                             element={<Comments/>}/>
                     </Route>
                     <Route path='tic-tac-toe' element={<TicTacToe/>}/>
-                    <Route path='todo' element={<Todo/>}/>
+                    <Route path='todo' element={<TodoApp/>}/>
                 </Route>
             </Routes>
         </div>
